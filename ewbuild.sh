@@ -1,5 +1,7 @@
 #!/bin/bash -x
 
+[[ 0 == $UID ]] && SUDO="" || SUDO="sudo"
+
 set -e
 
 [[ -n $LUAINC ]] || {
@@ -14,4 +16,4 @@ echo "LUAINC=$LUAINC" >&2
 
 make clean
 make INC_PATH="-I$LUAINC" linux
-sudo make LUAPATH=/usr/local/share/lua/5.1 LUACPATH=/usr/local/lib/lua/5.1 install
+$SUDO make LUAPATH=/usr/local/share/lua/5.1 LUACPATH=/usr/local/lib/lua/5.1 install
