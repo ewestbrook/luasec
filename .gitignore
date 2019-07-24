@@ -1,3 +1,5 @@
 /src/*.o
+/src/*.so
 /src/luasocket/*.o
+/src/luasocket/*.a
 /*.dll
